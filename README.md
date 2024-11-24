@@ -8,3 +8,9 @@ W ramach samodzielnych ćwiczeń polecamy spróbować połączyć się z jakimś
 Poniżej lista przykładowych usług: 
 * https://github.com/public-apis/public-apis
 * https://github.com/public-api-lists/public-api-lists
+
+
+Jak odpalić kafkę?
+```
+docker run -p 9092:9092 apache/kafka-native:3.9.0
+```
