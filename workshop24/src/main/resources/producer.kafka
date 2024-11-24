@@ -1,0 +1,11 @@
+PRODUCER myproducer
+topic: motopic
+record content
+
+###
+
+PRODUCER json-producer
+topic: javatopic
+{
+    "type": "my_test_event-{{random.number}}"
+}
