@@ -3,7 +3,6 @@ package pl.sii.digital.workshop24;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.shell.standard.ShellMethod;
 import org.springframework.shell.standard.ShellOption;
 
@@ -14,7 +13,7 @@ public class ShellComponent {
     StocksClient stocksClient;
 
     @Autowired
-    KafkaTemplate<String, String> kafkaTemplate;
+    KafkaProducer kafkaProducer;
 
     @ShellMethod(key = "hello")
     public String getHello(){
@@ -28,7 +27,7 @@ public class ShellComponent {
 
     @ShellMethod(key = "send")
     public void sendToTopic(String message, @ShellOption(defaultValue = "javatopic") String topicname){
-        kafkaTemplate.send(topicname, message);
+        kafkaProducer.send(topicname, message);
     }
 
 }
