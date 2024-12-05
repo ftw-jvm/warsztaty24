@@ -33,7 +33,7 @@ import org.testcontainers.utility.DockerImageName;
 @SpringBootTest
 @Testcontainers
 @Import(KafkaConsumer.class)
-public class EmbeddedKafkaIntegrationTest {
+public class ContainerizedKafkaIntegrationTest {
     
     @Container
     public static KafkaContainer kafka = new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:7.3.3"));
